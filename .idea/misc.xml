@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/layout/activity_my_notes.xml" value="0.1671171171171171" />
         <entry key="app/src/main/res/layout/activity_trending_news.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/news_item.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/note_view.xml" value="0.1671171171171171" />
       </map>
     </option>
   </component>
