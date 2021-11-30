@@ -75,7 +75,7 @@ import butterknife.ButterKnife;
         }
 
         public interface DialogListener{
-            void applyTexts(String title,String description,ArrayList<Note> mNote);
+            void applyTexts(String description,ArrayList<Note> mNote);
 
         }
     }
