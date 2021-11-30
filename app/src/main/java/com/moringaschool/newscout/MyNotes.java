@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyNotes extends AppCompatActivity {
+public class MyNotes extends AppCompatActivity implements  Dialog.DialogListener {
     @BindView(R.id.imageViewOpenDialog) ImageView ImageViewOpenDialog;
 
     @Override
@@ -32,5 +34,10 @@ public class MyNotes extends AppCompatActivity {
     private void openDialog() {
         Dialog dialog = new Dialog();
         dialog.show(getSupportFragmentManager(), "dialog");
+    }
+
+    @Override
+    public void applyTexts(String description, ArrayList<Note> mNote) {
+
     }
 }
