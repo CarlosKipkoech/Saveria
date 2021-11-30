@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -13,6 +16,7 @@ import butterknife.ButterKnife;
 
 public class TrendingNews extends AppCompatActivity {
     @BindView(R.id.newsItemRecyclerView) RecyclerView recyclerView;
+    @BindView(R.id.imageViewNotesBtn) ImageView ImageViewNotesBtn;
     ArrayList<News> mNews;
 
     @Override
@@ -31,7 +35,13 @@ public class TrendingNews extends AppCompatActivity {
         NewsAdapter newsAdapter = new NewsAdapter(mNews,TrendingNews.this);
         recyclerView.setAdapter(newsAdapter);
 
-
+        ImageViewNotesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrendingNews.this,MyNotes.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

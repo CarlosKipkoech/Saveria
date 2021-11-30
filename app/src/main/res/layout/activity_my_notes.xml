@@ -36,12 +36,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pluicon_adobespark" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="304dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="80dp"
+    <TextView
+        android:id="@+id/noteitem"
+        android:layout_width="316dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/textViewMyNotes" />
 
