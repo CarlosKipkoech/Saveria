@@ -1,12 +1,14 @@
 package com.moringaschool.newscout;
+import io.realm.RealmObject;
 
-public class Note {
+
+
+public class Note extends RealmObject {
     private  String title;
     private String description;
 
-    public Note(String title, String description) {
-        this.title = title;
-        this.description = description;
+    public Note() {
+
     }
 
     public String getTitle() {
