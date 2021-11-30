@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -13,6 +15,7 @@ import butterknife.ButterKnife;
 
 public class MyNotes extends AppCompatActivity implements  Dialog.DialogListener {
     @BindView(R.id.imageViewOpenDialog) ImageView ImageViewOpenDialog;
+    @BindView(R.id.notesListView) ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,8 @@ public class MyNotes extends AppCompatActivity implements  Dialog.DialogListener
             }
             
         });
+
+
     }
 
     private void openDialog() {
@@ -37,7 +42,8 @@ public class MyNotes extends AppCompatActivity implements  Dialog.DialogListener
     }
 
     @Override
-    public void applyTexts(String description, ArrayList<Note> mNote) {
-
+    public void applyTexts(ArrayList<String> NotesList) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MyNotes.this, android.R.layout.simple_list_item_1,NotesList);
+        listView.setAdapter(adapter);
     }
 }

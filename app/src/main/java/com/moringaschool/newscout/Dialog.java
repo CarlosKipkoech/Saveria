@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ import butterknife.ButterKnife;
 
           private EditText editTextDescription;
           private DialogListener listener;
+          ArrayList<String> NotesList =new ArrayList<>();
 
 
 
@@ -51,9 +53,12 @@ import butterknife.ButterKnife;
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             String description = editTextDescription.getText().toString();
-                            ArrayList<Note> mNote = new ArrayList<Note>();
-                            listener.applyTexts(description,mNote);
-
+                            if (description == null || description.trim().equals("") ){
+                                Toast.makeText(getActivity().getBaseContext(), "Input Field Cannot be Empty", Toast.LENGTH_SHORT).show();
+                            }else {
+                                NotesList.add(description);
+                            }
+                          listener.applyTexts(NotesList);
                         }
                     });
 
@@ -75,7 +80,7 @@ import butterknife.ButterKnife;
         }
 
         public interface DialogListener{
-            void applyTexts(String description,ArrayList<Note> mNote);
+            void applyTexts(ArrayList<String> NotesList);
 
         }
     }
