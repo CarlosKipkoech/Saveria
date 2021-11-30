@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Newscout">
         <activity
+            android:name=".AddNote"
+            android:exported="false" />
+        <activity
             android:name=".MyNotes"
             android:exported="false" />
         <activity
