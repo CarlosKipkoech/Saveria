@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/drawable/main_activity_background.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/note_image_bg.xml" value="0.1810810810810811" />
+        <entry key="app/src/main/res/drawable/rounde_corner.xml" value="0.1810810810810811" />
+        <entry key="app/src/main/res/layout/activity_add_note.xml" value="0.1671171171171171" />
         <entry key="app/src/main/res/layout/activity_dialog.xml" value="0.1671171171171171" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_my_notes.xml" value="0.1671171171171171" />

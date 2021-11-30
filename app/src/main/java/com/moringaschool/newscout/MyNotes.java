@@ -29,7 +29,7 @@ public class MyNotes extends AppCompatActivity{
         ButtonOpenAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyNotes.this,AddNoteActivity.class);
+                Intent intent = new Intent(MyNotes.this,AddNote.class);
                 startActivity(intent );
 
             }
