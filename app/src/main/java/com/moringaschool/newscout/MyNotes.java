@@ -31,25 +31,35 @@ public class MyNotes extends AppCompatActivity{
 
         ButterKnife.bind(this);
 
+        //set an view for onclick of Add note Button
+
         ButtonOpenAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyNotes.this,AddNote.class);
+                Intent intent = new Intent(MyNotes.this,AddNote.class);  //intent Addnote form
                 startActivity(intent );
 
             }
         });
+
+
+        //initialize realm  with current  context
+
         Realm.init(getApplicationContext());
-        Realm realm = Realm.getDefaultInstance();
+        Realm realm = Realm.getDefaultInstance();     //get new realm instance
 
         RealmResults<Note> notesList = realm.where(Note.class).findAll();
 
-        RecyclerView recyclerView = findViewById(R.id.notesRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        RecyclerView recyclerView = findViewById(R.id.notesRecyclerView);  //assign recyclerview to notes recyclerview
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)); //set layout manager to current context
         NotesAdapter notesAdapter = new NotesAdapter(getApplicationContext(),notesList);
         recyclerView.setAdapter(notesAdapter);
 
         notesList.addChangeListener(new RealmChangeListener<RealmResults<Note>>() {
+
+           //get results from realm
             @Override
             public void onChange(RealmResults<Note> notes) {
                 notesAdapter.notifyDataSetChanged();

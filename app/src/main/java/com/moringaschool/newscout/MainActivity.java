@@ -19,10 +19,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+
+            //set on ClickListener for getstarted button
         mBtn_getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TrendingNews.class);
+                Intent intent = new Intent(MainActivity.this,TrendingNews.class); //declare new activity intent
                 startActivity(intent);
             }
         });
